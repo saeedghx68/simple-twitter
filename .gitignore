@@ -1,0 +1,5 @@
+*pyc
+*sw[pomnlkj]
+.env
+logs/*
+__pycache__/*

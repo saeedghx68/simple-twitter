@@ -1,0 +1,46 @@
+version: '3'
+services:
+  #============================================================          REDIS
+  redis:
+    hostname: redis
+    image: redis:latest
+    ports:
+     - 9736:6379
+    networks:
+     - tweet
+    #volumes:
+     #- ./db_data/redis_data:/data
+  #============================================================          MONGODB
+  db:
+    hostname: 'db'
+    image: postgres:latest
+    ports:
+     - 2345:5432
+    volumes:
+    #- ./db_data/pg_data:/var/lib/postgresql/data
+    - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+     - POSTGRES_PORT=5432
+     - POSTGRES_USER=saeed
+     - POSTGRES_PASSWORD=123
+    networks:
+     - tweet
+#  #============================================================          API
+  api:
+    build: .
+    hostname: api
+    ports:
+     - 2080:2080
+    depends_on:
+     - db
+     - redis
+    healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:2080"]
+        interval: 30s
+        timeout: 10s
+        retries: 5
+    networks:
+    - tweet
+
+networks:
+  tweet:
