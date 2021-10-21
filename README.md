@@ -5,7 +5,7 @@ Simple Twitter is written in [sanic](https://github.com/huge-success/sanic) whic
 
 In this project I used these technologies:
 
-* `python` version: `3.7.0`
+* `python` version: `3.10.0`
 * `PostgreSQL` (to store tweets)
 * `redis` (to cache tag and related tweets)
 * `Sanic` (as an asynchronous web API)
@@ -38,7 +38,7 @@ docker exec -it [API DOCKER NAME] ENVIRONMENT=test pytest unittesting/
 
 to run test or build application, we have `make` commands. So, to run tests:
 
-**Note:** please install `python3.7` before run **`make`** command
+**Note:** please install `python3.10` before run **`make`** command
 
 
 **To test application**

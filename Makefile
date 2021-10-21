@@ -14,11 +14,10 @@ test:
 
 all:
 	cp .env.tpl .env
-	mkdir logs
-	touch logs/error.log
-	touch logs/access.log
-	sudo apt install python3-pip virtualenv
-	virtualenv -p python3.7 .env
-	source .env/bin/activate
-	pip install -r $(REQ_FILE)
-	python -m sanic server.app --host=$(host) --port=$(port) --workers=$(workers)
+	mkdir -p logs
+	touch -f logs/error.log
+	touch -f logs/access.log
+	sudo apt install python3.10 python3.10-dev python3.10-venv
+	python3.10 -m venv venv
+	./venv/bin/pip install -r $(REQ_FILE)
+	./venv/bin/python -m sanic server.app --host=$(host) --port=$(port) --workers=$(workers)
