@@ -8,7 +8,7 @@ aiocontextvars==0.2.0
     # via
     #   -r requirements.in
     #   gino
-aiofiles==0.4.0
+aiofiles==0.8.0
     # via
     #   -r requirements.in
     #   sanic
@@ -40,6 +40,8 @@ attrs==18.2.0
     #   -r requirements.in
     #   aiohttp
     #   pytest
+certifi==2021.10.8
+    # via httpx
 chardet==3.0.4
     # via
     #   -r requirements.in
@@ -48,23 +50,30 @@ gino==0.8.0
     # via -r requirements.in
 gunicorn==19.9.0
     # via -r requirements.in
+h11==0.9.0
+    # via httpcore
 hiredis==0.3.0
     # via
     #   -r requirements.in
     #   aioredis
+httpcore==0.11.1
+    # via httpx
 httptools==0.0.11
     # via
     #   -r requirements.in
     #   sanic
+httpx==0.15.4
+    # via sanic
 idna==2.7
     # via
     #   -r requirements.in
+    #   rfc3986
     #   yarl
 more-itertools==4.3.0
     # via
     #   -r requirements.in
     #   pytest
-multidict==4.5.0
+multidict==5.2.0
     # via
     #   -r requirements.in
     #   aiohttp
@@ -90,7 +99,9 @@ pytest-sanic==0.1.15
     # via -r requirements.in
 python-dotenv==0.9.1
     # via -r requirements.in
-sanic==0.8.3
+rfc3986[idna2008]==1.5.0
+    # via httpx
+sanic==20.12.6
     # via
     #   -r requirements.in
     #   sanic-openapi
@@ -103,6 +114,10 @@ six==1.11.0
     #   -r requirements.in
     #   more-itertools
     #   pytest
+sniffio==1.2.0
+    # via
+    #   httpcore
+    #   httpx
 sqlalchemy==1.2.12
     # via
     #   -r requirements.in
@@ -117,7 +132,7 @@ uvloop==0.11.3
     # via
     #   -r requirements.in
     #   sanic
-websockets==5.0.1
+websockets==9.1
     # via
     #   -r requirements.in
     #   sanic
