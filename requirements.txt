@@ -78,7 +78,7 @@ py==1.10.0
     # via
     #   -r requirements.in
     #   pytest
-pyjwt==1.6.4
+pyjwt==2.4.0
     # via
     #   -r requirements.in
     #   sanic-jwt
