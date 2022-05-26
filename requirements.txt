@@ -109,7 +109,7 @@ sqlalchemy==1.2.12
     #   gino
 typing-extensions==3.10.0.2
     # via aiohttp
-ujson==1.35
+ujson==5.2.0
     # via
     #   -r requirements.in
     #   sanic
