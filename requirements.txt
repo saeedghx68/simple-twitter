@@ -121,7 +121,7 @@ websockets==5.0.1
     # via
     #   -r requirements.in
     #   sanic
-wheel==0.37.0
+wheel==0.38.1
     # via -r requirements.in
 yarl==1.2.6
     # via
